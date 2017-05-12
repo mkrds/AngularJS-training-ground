@@ -12,7 +12,8 @@ component('todo', {
       var newTask = {
         name: taskName,
         priority: priority,
-        id: this.currentId
+        id: this.currentId,
+        completed: false
       };
       this.tasks.push(newTask);
       this.currentId++;
@@ -24,6 +25,13 @@ component('todo', {
         this.tasks[j].id--;
       }
       this.currentId--;
+    }
+    this.toggleCompleted = function(i) {
+      if (!this.tasks[i].completed) {
+        this.tasks[i].completed = true;
+      } else {
+        this.tasks[i].completed = false;
+      }
     }
   }
 });

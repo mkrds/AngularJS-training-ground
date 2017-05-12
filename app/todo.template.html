@@ -1,4 +1,4 @@
-<div>
+<div class="container">
   <p>
     Add task:
   </p>
@@ -9,12 +9,14 @@
     <input ng-model="$ctrl.newTaskPriority" />
   </p>
   <button ng-click="$ctrl.addTodo($ctrl.newTask, $ctrl.newTaskPriority)">Add</button>
-  <h1>Current tasks:</h1>
+  <h2 class="">Current tasks:</h2>
   <ul>
     <li ng-repeat="task in $ctrl.tasks | orderBy: $ctrl.orderProp">
       <p>{{task.name}}</p>
       <p>Priority: {{task.priority}}</p>
       <p>Task Id: {{task.id}}</p>
+      <p>Completed: {{task.completed}}</p>
+      <button ng-click="$ctrl.toggleCompleted(task.id)">Completed</button>
       <button ng-click="$ctrl.removeTodo(task.id)">Remove</button>
     </li>
   </ul>
