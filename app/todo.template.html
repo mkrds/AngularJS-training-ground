@@ -14,6 +14,8 @@
     <li ng-repeat="task in $ctrl.tasks | orderBy: $ctrl.orderProp">
       <p>{{task.name}}</p>
       <p>Priority: {{task.priority}}</p>
+      <p>Task Id: {{task.id}}</p>
+      <button ng-click="$ctrl.removeTodo(task.id)">Remove</button>
     </li>
   </ul>
 </div>
