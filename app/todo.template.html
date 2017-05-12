@@ -1,0 +1,19 @@
+<div>
+  <p>
+    Add task:
+  </p>
+  <p>Task description:
+    <input ng-model="$ctrl.newTask" />
+  </p>
+  <p>Task priority (1-10):
+    <input ng-model="$ctrl.newTaskPriority" />
+  </p>
+  <button ng-click="$ctrl.addTodo($ctrl.newTask, $ctrl.newTaskPriority)">Add</button>
+  <h1>Current tasks:</h1>
+  <ul>
+    <li ng-repeat="task in $ctrl.tasks | orderBy: $ctrl.orderProp">
+      <p>{{task.name}}</p>
+      <p>Priority: {{task.priority}}</p>
+    </li>
+  </ul>
+</div>
